@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <dialog id="dialog">
+        <form class="my-form">
+            <input type="text" placeholder="Title? " name="title" id="title">
+            <input type="text" placeholder="Author? " name="author" id="author">
+            <input type="number" placeholder="Number of pages? " name="pages" id="pages">
+            <label>
+                <select id="read">
+                <option value="default">Have you read the book?</option>
+                <option>Finished</option>
+                <option>Not yet</option>
+                <option>In Progress</option>
+                </select>
+            </label>
+            <button>Get Value</button>
+        </form>
+    </dialog>
+    <button id="show-dialog">Add book</button>
+</body>
+</html>
