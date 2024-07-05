@@ -4,6 +4,8 @@ const myLibrary = [];
 const form = document.querySelector(".my-form");
 const showBtn = document.getElementById("show-dialog");
 const container = document.querySelector(".container");
+const deleteBtn = document.querySelector(".delete-btn")
+const addBook = document.querySelector(".add-book")
 
 form.addEventListener("submit", function(e) {
     e.preventDefault();
@@ -16,13 +18,14 @@ form.addEventListener("submit", function(e) {
 
     myLibrary.push(newBook);
     addBookToLibrary(myLibrary);
-
     dialog.close();
 })
 
 showBtn.addEventListener("click", () => {
-    dialog.showModal();
+    dialog.show();
 })
+
+
 
 
 // functions **
@@ -31,24 +34,37 @@ showBtn.addEventListener("click", () => {
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
-    this.pages = pages;
+    this.pages = pages + " pages";
     this.read = read;
 }
 
 
 function addBookToLibrary(myLibrary) {
     let book = myLibrary[myLibrary.length-1];
-    console.log(book)
+    createCard(book)
+}
+
+function createCard(book) {
 
     const card = document.createElement("ul");
-    container.insertBefore(card,container.children[0])
+    container.insertBefore(card,addBook)
+
+    const att = document.createAttribute("class");
+    att.value = "delete-btn";
     
     for (let key in book){
-    console.log(key)
-    console.log(book[key])
     const list = document.createElement('li');
+    list.classList.add(key);
     list.textContent = book[key];
     card.appendChild(list)
     }
-}
 
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Delete";
+    deleteBtn.setAttributeNode(att);
+    card.appendChild(deleteBtn);
+    deleteBtn.addEventListener("click",(e) => {
+        e.target.parentElement.remove();
+    })
+
+}

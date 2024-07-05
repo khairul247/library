@@ -1,35 +1,96 @@
+.gaegu-bold {
+    font-family: "Gaegu", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .gaegu-regular {
+    font-family: "Gaegu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .gaegu-light {
+    font-family: "Gaegu", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+/* start here */
+*{
+    font-family: "Gaegu", sans-serif; 
+}
+
+img {
+    height: 150px;
+    width: 150px;
+}
+
 body{
+    margin: 0;
     height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-.container > *{
+ul {
     margin: 0;
-    border: 1px solid red;
+    border-radius: 25%;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 5px 15px #eb9191;
 }
 
 .add-book {
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 25%;
+    box-shadow: 0 5px 15px #eb9191;
 }
 
 .header {
-    border: 1px solid blue;
+    background-color: #eb9191;
     flex-shrink: 0;
     height: 135px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3px 10px rgb(179, 173, 173);
 }
 
 .container {
-    border: 1px solid red;
-    padding: 30px;
+    padding: 50px;
+    position: relative;
     flex: 1 0 0;
     display: grid;
     grid-template-columns: repeat(auto-fill,250px);
     grid-auto-rows: 250px;
-    gap: 50px
+    gap: 50px;
 
 }
 
+#dialog {
+    position: absolute;
+    align-self: center;
+    justify-self: center;
+}
 
+.title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.read {
+    margin-top: 20px;
+}
+
+.delete-btn {
+    margin-top: 20px;
+    width: fit-content;
+    align-self: center;
+}
