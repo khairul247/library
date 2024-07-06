@@ -56,6 +56,7 @@ button {
     align-items: center;
     border-radius: 50px;
     box-shadow: 0 5px 15px #eb9191;
+    
 }
 
 .header {
@@ -80,9 +81,18 @@ button {
 }
 
 #dialog {
+    padding: 50px;
     position: absolute;
     align-self: center;
     justify-self: center;
+    border-radius: 10%;
+    border: 2px solid #eb9191;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .title {
