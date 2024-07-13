@@ -29,26 +29,24 @@ showBtn.addEventListener("click", () => {
 
 
 // functions **
-
-
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages + " pages";
-    this.read = read;
-}
-
-Book.prototype.toggleReadStatus = function () {
-    if (this.read === "Finished") {
-        this.read = "In Progress";
-    } else if (this.read === "In Progress") { 
-        this.read = "Not Yet";
-    } else {
-        this.read = "Finished";
+class Book {
+    constructor(title, author, pages, read){
+        this.title = title;
+        this.author = author;
+        this.pages = pages + " pages";
+        this.read = read;
     }
-};
 
-
+    toggleReadStatus() {
+        if (this.read === "Finished") {
+            this.read = "In Progress";
+        } else if (this.read === "In Progress") { 
+            this.read = "Not Yet";
+        } else {
+            this.read = "Finished";
+        }
+    }
+}
 
 function addBookToLibrary(myLibrary) {
     let book = myLibrary[myLibrary.length-1];
